@@ -34,13 +34,13 @@ const SideNav = () => {
         console.log(path)
     },[])
   return (
-    <div className='h-screen p-5 shadow-sm border-r border-r-secondary bg-[#090909]'>
+    <div className='h-screen p-5 shadow-sm border-r-2 border-r-secondary bg-card '>
         <div className='flex justify-center border-b'>
         <Image src={'/logo.svg'} alt='logo' width={210} height={150} />
         </div>
         <div className='mt-3'>
             {MenuList.map((menu,index)=>(
-                <div className={`flex gap-2 mb-2 p-3 rounded-lg items-center transition duration-200 hover:drop-shadow-white hover:drop-shadow-3xl hover:bg-primary hover:cursor-pointer hover:text-popover ${path===menu.path && 'bg-primary text-popover'}`}>
+                <div className={`flex gap-2 mb-2 p-3 rounded-lg items-center transition duration-200 hover:drop-shadow-2xl hover:bg-primary hover:cursor-pointer hover:text-popover ${path===menu.path && 'bg-secondary text-secondary-foreground shadow-sm shadow-secondary-foreground'}`}>
                     <menu.icon/>
                     <h2 className='text-lg'>{menu.name}</h2>
                 </div>

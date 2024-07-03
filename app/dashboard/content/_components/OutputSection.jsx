@@ -8,10 +8,10 @@ import { Copy } from 'lucide-react';
 const OutputSection = () => {
     const editorRef = useRef();
   return (
-    <div className='bg-card border rounded-lg'>
+    <div className='bg-card border border-muted rounded-lg'>
         <div className='flex justify-between items-center p-5'>
         <h2 className='font-medium text-lg'>Your Result</h2>
-        <Button className='flex gap-2'><Copy/> Copy</Button>
+        <Button className='flex gap-2 bg-secondary text-secondary-foreground'><Copy/> Copy</Button>
         </div>
         <Editor
         ref={editorRef}

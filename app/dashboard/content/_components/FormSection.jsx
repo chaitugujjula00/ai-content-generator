@@ -16,7 +16,7 @@ const FormSection = ({selectedTemplate,userFormInput}) => {
         userFormInput(formData)
     }
   return (
-    <div className='p-5 shadow-md border rounded-lg bg-card'>
+    <div className='p-5 shadow-md border border-muted rounded-lg bg-card'>
         <Image src={selectedTemplate.icon} alt='icon' width={70} height={70}/>
         <h2 className='font-bold text-2xl mb-2 text-primary'>{selectedTemplate.name}</h2>
         <p className='text-sm text-muted'>{selectedTemplate.desc}</p>
@@ -31,7 +31,7 @@ const FormSection = ({selectedTemplate,userFormInput}) => {
                 </div>
             ))}
 
-            <Button type='Submit' className='w-full py-6'>Generate Content</Button>
+            <Button type='Submit' className='w-full py-6 bg-primary text-primary-foreground'>Generate Content</Button>
         </form>
     </div>
   )

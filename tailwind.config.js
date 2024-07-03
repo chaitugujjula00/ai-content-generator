@@ -21,15 +21,15 @@ module.exports = {
         border: "hsl(0, 0%, 20%)", // Dark grey for borders
         input: "hsl(0, 0%, 90%)", // Light grey for input backgrounds
         ring: "hsl(0, 0%, 50%)", // Mid grey for focus rings
-        background: "hsl(0, 0%, 0%)", // Very dark grey for background
-        foreground: "hsl(0, 0%, 100%)", // White for foreground text
+        background: "hsl(0, 0%, 90%)", // Light grey for background
+        foreground: "hsl(0, 0%, 20%)", // Very dark grey for foreground text
         primary: {
           DEFAULT: "hsl(0, 100%, 50%)", // Red for primary color (Deadpool)
           foreground: "hsl(0, 0%, 100%)", // White for primary foreground
         },
         secondary: {
           DEFAULT: "hsl(45, 100%, 50%)", // Yellow for secondary color (Wolverine)
-          foreground: "hsl(0, 0%, 0%)", // Black for secondary foreground
+          foreground: "hsl(0, 0%, 10%)", // Very dark grey for secondary foreground
         },
         destructive: {
           DEFAULT: "hsl(0, 100%, 30%)", // Dark red for destructive actions
@@ -37,7 +37,7 @@ module.exports = {
         },
         muted: {
           DEFAULT: "hsl(0, 0%, 60%)", // Light grey for muted text
-          foreground: "hsl(0, 0%, 10%)", // Very dark grey for muted foreground
+          foreground: "hsl(0, 0%, 20%)", // Dark grey for muted foreground
         },
         accent: {
           DEFAULT: "hsl(220, 100%, 50%)", // Blue for accent color (Wolverine)
@@ -48,10 +48,10 @@ module.exports = {
           foreground: "hsl(0, 0%, 100%)", // White for popover foreground
         },
         card: {
-          DEFAULT: "hsl(0, 0%, 15%)", // Very dark grey for cards
-          foreground: "hsl(0, 0%, 100%)", // White for card foreground
+          DEFAULT: "hsl(0, 0%, 95%)", // Light grey for cards
+          foreground: "hsl(0, 0%, 10%)", // Very dark grey for card foreground
         },
-      },      
+      },       
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
