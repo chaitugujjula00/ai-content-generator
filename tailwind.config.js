@@ -21,7 +21,7 @@ module.exports = {
         border: "hsl(0, 0%, 20%)", // Dark grey for borders
         input: "hsl(0, 0%, 90%)", // Light grey for input backgrounds
         ring: "hsl(0, 0%, 50%)", // Mid grey for focus rings
-        background: "hsl(0, 0%, 5%)", // Very dark grey for background
+        background: "hsl(0, 0%, 0%)", // Very dark grey for background
         foreground: "hsl(0, 0%, 100%)", // White for foreground text
         primary: {
           DEFAULT: "hsl(0, 100%, 50%)", // Red for primary color (Deadpool)
