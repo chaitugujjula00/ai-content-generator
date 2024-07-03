@@ -16,7 +16,7 @@ const FormSection = ({selectedTemplate,userFormInput}) => {
         userFormInput(formData)
     }
   return (
-    <div className='p-5 shadow-md border rounded-lg bg-[#090909]'>
+    <div className='p-5 shadow-md border rounded-lg bg-card'>
         <Image src={selectedTemplate.icon} alt='icon' width={70} height={70}/>
         <h2 className='font-bold text-2xl mb-2 text-primary'>{selectedTemplate.name}</h2>
         <p className='text-sm text-muted'>{selectedTemplate.desc}</p>
