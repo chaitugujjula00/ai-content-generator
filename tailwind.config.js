@@ -18,40 +18,40 @@ module.exports = {
     },
     extend: {
       colors: {
-        border: "hsl(var(--border))",
-        input: "hsl(var(--input))",
-        ring: "hsl(var(--ring))",
-        background: "hsl(var(--background))",
-        foreground: "hsl(var(--foreground))",
+        border: "hsl(0, 0%, 20%)", // Dark grey for borders
+        input: "hsl(0, 0%, 90%)", // Light grey for input backgrounds
+        ring: "hsl(0, 0%, 50%)", // Mid grey for focus rings
+        background: "hsl(0, 0%, 5%)", // Very dark grey for background
+        foreground: "hsl(0, 0%, 100%)", // White for foreground text
         primary: {
-          DEFAULT: "hsl(var(--primary))",
-          foreground: "hsl(var(--primary-foreground))",
+          DEFAULT: "hsl(0, 100%, 50%)", // Red for primary color (Deadpool)
+          foreground: "hsl(0, 0%, 100%)", // White for primary foreground
         },
         secondary: {
-          DEFAULT: "hsl(var(--secondary))",
-          foreground: "hsl(var(--secondary-foreground))",
+          DEFAULT: "hsl(45, 100%, 50%)", // Yellow for secondary color (Wolverine)
+          foreground: "hsl(0, 0%, 0%)", // Black for secondary foreground
         },
         destructive: {
-          DEFAULT: "hsl(var(--destructive))",
-          foreground: "hsl(var(--destructive-foreground))",
+          DEFAULT: "hsl(0, 100%, 30%)", // Dark red for destructive actions
+          foreground: "hsl(0, 0%, 100%)", // White for destructive foreground
         },
         muted: {
-          DEFAULT: "hsl(var(--muted))",
-          foreground: "hsl(var(--muted-foreground))",
+          DEFAULT: "hsl(0, 0%, 60%)", // Light grey for muted text
+          foreground: "hsl(0, 0%, 10%)", // Very dark grey for muted foreground
         },
         accent: {
-          DEFAULT: "hsl(var(--accent))",
-          foreground: "hsl(var(--accent-foreground))",
+          DEFAULT: "hsl(220, 100%, 50%)", // Blue for accent color (Wolverine)
+          foreground: "hsl(0, 0%, 100%)", // White for accent foreground
         },
         popover: {
-          DEFAULT: "hsl(var(--popover))",
-          foreground: "hsl(var(--popover-foreground))",
+          DEFAULT: "hsl(0, 0%, 20%)", // Dark grey for popovers
+          foreground: "hsl(0, 0%, 100%)", // White for popover foreground
         },
         card: {
-          DEFAULT: "hsl(var(--card))",
-          foreground: "hsl(var(--card-foreground))",
+          DEFAULT: "hsl(0, 0%, 15%)", // Very dark grey for cards
+          foreground: "hsl(0, 0%, 100%)", // White for card foreground
         },
-      },
+      },      
       borderRadius: {
         lg: "var(--radius)",
         md: "calc(var(--radius) - 2px)",
