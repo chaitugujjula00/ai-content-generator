@@ -8,7 +8,7 @@ const Header = () => {
             <Search/>
             <input type='text' placeholder='Search...' className='bg-background outline-none'/>
         </div>
-        <div className='bg-primary items-center rounded-full text-sm text-white px-4 py-2.5'>
+        <div className='bg-primary items-center rounded-full text-sm text-background px-4 py-2.5'>
             Join Premium just for Rs.100/Month
         </div>
     </div>
