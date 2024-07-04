@@ -28,12 +28,13 @@ const CreateNewContent = (props) => {
       const result = await chatSession.sendMessage(FinalAIPrompt)
       console.log(result.response.text())
       setAiOutput(result.response.text())
-      await SaveInDb(formData, selectedTemplate?.slug, result.response.text())
+      await SaveInDb(formData, selectedTemplate?.slug, result.response.text(), selectedTemplate?.icon)
       setLoading(false);
     }
 
-    const SaveInDb = async(formData, slug, aiOutput) =>{
+    const SaveInDb = async(formData, slug, aiOutput,image) =>{
       const result = await db.insert(AIOutput).values({
+        icon:image,
         formData:formData,
         templateSlug:slug,
         aiResponse:aiOutput,
