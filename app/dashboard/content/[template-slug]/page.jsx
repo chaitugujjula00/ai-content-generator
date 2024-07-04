@@ -13,6 +13,7 @@ import { useUser } from '@clerk/nextjs'
 import moment from 'moment'
 import { TotalUsageContext } from '@/app/(context)/TotalUsageContext'
 import { useRouter } from 'next/navigation'
+import { UpdateCreditsUsageContext } from '@/app/(context)/UpdateCreditsUsage'
 
 const CreateNewContent = (props) => {
     const selectedTemplate =  Templates.find((item)=>item.slug==props.params['template-slug'])
@@ -21,6 +22,14 @@ const CreateNewContent = (props) => {
     const {totalUsage, setTotalUsage} = useContext(TotalUsageContext)
     const {user} = useUser();
     const router  = useRouter();
+    const {updateCreditUsage,setUpdateCreditUsage} = useContext(UpdateCreditsUsageContext)
+
+    /**
+     * Used to generate content from AI
+     * @param  formData
+     * @returns 
+     */
+
     const GenerateAIContent = async (formData)=>{
       setLoading(true);
       console.log(formData)
@@ -33,6 +42,7 @@ const CreateNewContent = (props) => {
       setAiOutput(result.response.text())
       await SaveInDb(formData, selectedTemplate?.slug, result.response.text(), selectedTemplate?.icon)
       setLoading(false);
+      setUpdateCreditUsage(Date.now())
     }
 
     const SaveInDb = async(formData, slug, aiOutput,image) =>{

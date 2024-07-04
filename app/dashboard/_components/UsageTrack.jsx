@@ -1,5 +1,6 @@
 "use client"
 import { TotalUsageContext } from '@/app/(context)/TotalUsageContext'
+import { UpdateCreditsUsageContext } from '@/app/(context)/UpdateCreditsUsage'
 import { Button } from '@/components/ui/button'
 import { db } from '@/utils/db'
 import { AIOutput } from '@/utils/schema'
@@ -7,16 +8,20 @@ import { useUser } from '@clerk/nextjs'
 import React, { useContext, useEffect, useState } from 'react'
 
 const UsageTrack = () => {
-    const [result,setResult] = useState([])
     const {totalUsage, setTotalUsage} = useContext(TotalUsageContext)
     const {user} = useUser();
-    
+    const {updateCreditUsage,setUpdateCreditUsage} = useContext(UpdateCreditsUsageContext)
+
     useEffect(()=>{
-        result&&GetTotalUsage();
-    },[result&&user])
-    const GetTotalUsage = () =>{
+        user&&check();
+    },[user]);
+
+    useEffect(()=>{
+        user&&check();
+    },[updateCreditUsage&&user])
+    const GetTotalUsage = (results) =>{
         let totalVal=0;
-        result.forEach(element => {
+        results.forEach(element => {
             totalVal=totalVal+element.aiResponse?.length
         })
         setTotalUsage(totalVal);
@@ -25,12 +30,8 @@ const UsageTrack = () => {
 
     const check = async()=>{
         const results = await db.select().from(AIOutput).where('createdBy'===user?.primaryEmailAddress?.emailAddress);
-        setResult(results);
-        GetTotalUsage()
+        GetTotalUsage(results);
     }
-    useEffect(()=>{
-        check();
-    },[db])
   return (
     <div className='m-5'>
         <div className='bg-primary text-secondary-foreground rounded-lg p-3'>
