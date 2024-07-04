@@ -2,10 +2,11 @@
 import { Button } from '@/components/ui/button'
 import { Input } from '@/components/ui/input'
 import { Textarea } from '@/components/ui/textarea'
+import { Loader2Icon } from 'lucide-react'
 import Image from 'next/image'
 import React, { useState } from 'react'
 
-const FormSection = ({selectedTemplate,userFormInput}) => {
+const FormSection = ({selectedTemplate, userFormInput, loading}) => {
     const [formData, setFormData] = useState();
     const handleInputChange = (e) => {
         const{name,value}=e.target;
@@ -31,7 +32,7 @@ const FormSection = ({selectedTemplate,userFormInput}) => {
                 </div>
             ))}
 
-            <Button type='Submit' className='w-full py-6 bg-primary text-primary-foreground'>Generate Content</Button>
+            <Button type='Submit' className='w-full py-6 bg-primary text-primary-foreground' disabled={loading}>{loading ?<Loader2Icon className='animate-spin mr-2'/>:null} Generate Content</Button>
         </form>
     </div>
   )
