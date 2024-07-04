@@ -4,6 +4,7 @@ import Image from 'next/image'
 import { usePathname } from 'next/navigation'
 import React, { useEffect } from 'react'
 import UsageTrack from './UsageTrack'
+import Link from 'next/link'
 
 const SideNav = () => {
 
@@ -26,7 +27,7 @@ const SideNav = () => {
         {
             name:'Setting',
             icon:Settings,
-            path:'/dashboard/setting'
+            path:'/dashboard/settings'
         },
     ]
 
@@ -41,10 +42,12 @@ const SideNav = () => {
         </div>
         <div className='mt-3'>
             {MenuList.map((menu,index)=>(
+                <Link href={menu.path} key={index}>
                 <div className={`flex gap-2 mb-2 p-3 rounded-lg items-center transition duration-200 hover:drop-shadow-2xl hover:bg-primary hover:cursor-pointer hover:text-popover ${path===menu.path && 'bg-secondary text-secondary-foreground shadow-sm shadow-secondary-foreground'}`}>
                     <menu.icon/>
                     <h2 className='text-lg'>{menu.name}</h2>
                 </div>
+                </Link>
             ))}
         </div>
 

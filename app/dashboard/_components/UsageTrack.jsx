@@ -5,6 +5,7 @@ import { Button } from '@/components/ui/button'
 import { db } from '@/utils/db'
 import { AIOutput } from '@/utils/schema'
 import { useUser } from '@clerk/nextjs'
+import Link from 'next/link'
 import React, { useContext, useEffect, useState } from 'react'
 
 const UsageTrack = () => {
@@ -45,7 +46,7 @@ const UsageTrack = () => {
             </div>
             <h2 className='text-sm my-2'>{totalUsage}/10,000 Credit Used</h2>
         </div>
-        <Button variant={'secondary'}  className='w-full my-3'>Upgrade</Button>
+        <Link href='/dashboard/billing'><Button variant={'secondary'}  className='w-full my-3'>Upgrade</Button></Link>
     </div>
   )
 }
