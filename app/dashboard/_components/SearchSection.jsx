@@ -3,7 +3,7 @@ import React from 'react'
 
 const SearchSection = ({onSearchInput}) => {
   return (
-    <div className='p-10 bg-gradient-to-br from-primary to-secondary flex flex-col gap-3 justify-center items-center  mx-10 my-5 rounded-bl-2xl'>
+    <div className='p-10 bg-gradient-to-br from-primary to-secondary flex flex-col gap-3 justify-center items-center  mx-10 my-5 rounded-2xl'>
         <h2 className='text-3xl font-bold text-secondary-foreground'>Browse All Templates</h2>
         <p className='text-muted-foreground'>What would you like to create today?</p>
         <div className='w-full flex justify-center'>

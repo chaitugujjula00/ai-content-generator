@@ -1,5 +1,5 @@
 "use client"
-import React, { useState } from 'react'
+import React, { useContext, useState } from 'react'
 import FormSection from '../_components/FormSection'
 import OutputSection from '../_components/OutputSection'
 import Templates from '@/app/(data)/Templates'
@@ -11,13 +11,16 @@ import { db } from '@/utils/db'
 import { AIOutput } from '@/utils/schema'
 import { useUser } from '@clerk/nextjs'
 import moment from 'moment'
+import { TotalUsageContext } from '@/app/(context)/TotalUsageContext'
+import { useRouter } from 'next/navigation'
 
 const CreateNewContent = (props) => {
     const selectedTemplate =  Templates.find((item)=>item.slug==props.params['template-slug'])
     const [loading, setLoading] = useState(false);
     const [aiOutput, setAiOutput] = useState('')
-
+    const {totalUsage, setTotalUsage} = useContext(TotalUsageContext)
     const {user} = useUser();
+    const router  = useRouter();
     const GenerateAIContent = async (formData)=>{
       setLoading(true);
       console.log(formData)
@@ -44,7 +47,11 @@ const CreateNewContent = (props) => {
 
       console.log(result)
     }
+    if(totalUsage>=10000){
+      router.push('/dashboard/billing')
+      return;
 
+    }
   return (
     <div className='p-5'>
       <Link href={'/dashboard'}><Button> <ArrowLeft/> Back </Button></Link>

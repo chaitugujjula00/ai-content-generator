@@ -1,10 +1,15 @@
-import React from 'react'
+"use client"
+import React, { useState } from 'react'
 import SideNav from './_components/SideNav'
 import Header from './_components/Header'
+import { TotalUsageContext } from '../(context)/TotalUsageContext'
 
 function layout({children}) {
+
+  const [totalUsage,setTotalUsage] = useState(0)
   return (
-    <div className='h-screen'>
+    <TotalUsageContext.Provider value={{totalUsage,setTotalUsage}}>
+      <div className='h-screen'>
       <div className='md:w-64 hidden md:block fixed'>
         <SideNav/>
       </div>
@@ -12,7 +17,8 @@ function layout({children}) {
         <Header />
         {children}
       </div>
-    </div>
+      </div>
+    </TotalUsageContext.Provider>
   )
 }
 
