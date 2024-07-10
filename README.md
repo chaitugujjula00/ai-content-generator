@@ -1,9 +1,9 @@
 Certainly! I'll create a README.md file for your GitHub repository based on the AI content generation website project we've been discussing. Here's a template you can use:
 
 ```markdown
-# AIContentPro: AI-Powered Content Generation Platform
+# smartContent-AI: AI-Powered Content Generation Platform
 
-AIContentPro is a cutting-edge web application that leverages advanced AI technology to revolutionize content creation. This platform enables users to generate high-quality, SEO-optimized content quickly and efficiently.
+smartContent-AI is a cutting-edge web application that leverages advanced AI technology to revolutionize content creation. This platform enables users to generate high-quality, SEO-optimized content quickly and efficiently.
 
 ## Features
 
@@ -66,7 +66,7 @@ AIContentPro is a cutting-edge web application that leverages advanced AI techno
 
 ## Contributing
 
-We welcome contributions to AIContentPro! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
+We welcome contributions to smartContent-AI! Please read our [Contributing Guide](CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests.
 
 ## Acknowledgements
 
