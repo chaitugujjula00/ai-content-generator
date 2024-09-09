@@ -210,5 +210,21 @@ export default[
                 required: true
             }
         ]
+    },
+    {
+        name: 'Project Ideas',
+        desc: 'This AI tool gives you some project ideas in the given domain',
+        category: 'Software Development',
+        icon: 'https://cdn-icons-png.flaticon.com/128/1285/1285355.png',
+        aiPrompt: 'Generate a list of projects that can done using given domain and a short description about each project ',
+        slug: 'Domain-name',
+        form: [
+            {
+                label: 'Enter domain Name',
+                field: 'input',
+                name: 'domainName',
+                required: true
+            }
+        ]
     }    
 ]
